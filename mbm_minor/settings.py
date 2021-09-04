@@ -121,9 +121,9 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
-
+STATIC_ROOT = str(BASE_DIR / "staticfiles")
 STATIC_URL = '/static/'
-
+STATICFILES_DIRS = [str(BASE_DIR / "static")]
 CELERY_TIMEZONE = "Australia/Tasmania"
 CELERY_TASK_TRACK_STARTED = True
 CELERY_TASK_TIME_LIMIT = 30 * 60
