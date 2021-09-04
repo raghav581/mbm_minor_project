@@ -11,6 +11,6 @@ class getListCities(APIView):
 def home(request):
 	if request.method=='POST':
 		name=request.POST['name']
-		return render(request,'home.html',{"ans":name})
+		return render(request,'Jodhpur.html',{"ans":name})
 	else:
-		return render(request,'home.html')
+		return render(request,'Jodhpur.html')
