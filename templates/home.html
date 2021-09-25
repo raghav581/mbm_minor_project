@@ -1,15 +1,24 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Home</title>
+	<meta charset="utf-8">
+	<title>House Data Perdiction</title>
 </head>
 <body>
-	<h1>Hello</h1>
-	<form method="post" action="">
-		{% csrf_token %}
-		Enter your name <input type="text" name="name">
-		<input type="submit" name="submit">
-	</form>
-	<h1>{{ans}}</h1>
+	<div>
+		<form accept="" method="post">
+			{% csrf_token %}
+			Area:-<input type="text" name="area"><br>
+			BHK:-<input type="text" name="bhk"><br>
+			Bathroom:-<input type="text" name="bathroom"><br>
+			Location:-<input type="text" name="location"><br>
+			Availability:-<input type="text" name="availability"><br>
+			Area-Type:-<input type="text" name="type"><br>
+			<input type="submit" name="submit"><br>
+		</form>
+	</div>
+	<div>
+		<h1>Price = {{ans}}</h1>
+	</div>
 </body>
 </html>
