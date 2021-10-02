@@ -5,6 +5,7 @@ import json
 import pickle
 import numpy
 from .utils import get_price_from_model
+
 class getListCities(APIView):
 	def get(self,request,*args,**kwargs):
 		ans=['nitin','saini']
@@ -21,20 +22,28 @@ class predictPrice(APIView):
 		availibility=request.data.get('availability')
 		area_type=request.data.get('type')
 		print(area,bath,bhk,location,availibility,area_type)
-		ans=get_price_from_model(area=1056.0,bhk=2,bath=2,availibility='Ready To Move',area_type='Built-up  Area',location=' Devarachikkanahalli')
+		# ans=get_price_from_model(area=1056.0,bhk=2,bath=2,availibility='Ready To Move',area_type='Built-up  Area',location=' Devarachikkanahalli')
+		ans=get_price_from_model(
+				area=float(area),
+				bhk=int(bhk),
+				bath=int(bath),
+				availibility=str(availibility),
+				area_type=str(area_type),
+				location=str(location)
+			)
 		return Response({'price':ans})
+
 def home(request):
-	if request.method=='POST':
-		area=request.POST['area']
-		bath=request.POST['bathroom']
-		bhk=request.POST['bhk']
-		location=request.POST['location']
-		bavailabilityhk=request.POST['availability']
-		location=request.POST['type']
-		
-		return render(request,'home.html',{"ans":127465})
-	else:
-		return render(request,'home.html')
+	# if request.method=='POST':
+	# 	area=request.POST['area']
+	# 	bath=request.POST['bathroom']
+	# 	bhk=request.POST['bhk']
+	# 	location=request.POST['location']
+	# 	bavailabilityhk=request.POST['availability']
+	# 	location=request.POST['type']
+	# 	return render(request,'home.html',{"ans":127465})
+	# else:
+	return render(request,'home.html')
 
 
 # area
