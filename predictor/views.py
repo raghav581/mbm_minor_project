@@ -6,13 +6,15 @@ import pickle
 import numpy
 from .utils import get_price_from_model
 
+# API to get list of locations, availability status and area type
 class getListCities(APIView):
 	def get(self,request,*args,**kwargs):
 		ans=['nitin','saini']
 		with open("columns.json",'r') as f:
 			locations = json.load(f)
 		return Response(locations)
-	
+
+# POST API to perdict the price of the home based on given parameters 
 class predictPrice(APIView):
 	def post(self,request,*args,**kwargs):
 		area= request.data.get('area')
@@ -33,24 +35,8 @@ class predictPrice(APIView):
 			)
 		return Response({'price':ans})
 
+# for rendering the home page 
 def home(request):
-	# if request.method=='POST':
-	# 	area=request.POST['area']
-	# 	bath=request.POST['bathroom']
-	# 	bhk=request.POST['bhk']
-	# 	location=request.POST['location']
-	# 	bavailabilityhk=request.POST['availability']
-	# 	location=request.POST['type']
-	# 	return render(request,'home.html',{"ans":127465})
-	# else:
 	return render(request,'home.html')
 
-
-# area
-# bhk
-# bathrooms
-# location
-# availability->ready
-# area_type
-# price
 
