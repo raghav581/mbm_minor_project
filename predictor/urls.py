@@ -1,7 +1,9 @@
 from django.urls import path, include
-from .views import getListCities, home
+from .views import getListCities, home, predictPrice
 
 urlpatterns = [
-    path("list-area",getListCities.as_view(),name='list-area'),
+    path("get-location",getListCities.as_view(),name='list-area'),
+    path("predict-price",predictPrice.as_view(),name='predict-price'),
+    
     path("",home,name='home'),
 ]
