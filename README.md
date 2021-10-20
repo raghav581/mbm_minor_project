@@ -27,6 +27,11 @@ some question like:-
 	5. Availability 
 	6. Area type
 
+Dataset-
+
+The dataset for the project was gathered from Kaggle.
+Link: https://www.kaggle.com/amitabhajoy/bengaluru-house-price-data
+ 
 Project Installation :- 
 
 git clone https://github.com/nitinsaini1008/mbm_minor_project/
